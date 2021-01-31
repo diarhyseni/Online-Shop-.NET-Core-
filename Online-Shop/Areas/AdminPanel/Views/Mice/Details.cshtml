@@ -1,0 +1,76 @@
+﻿@model Online_Shop.Models.Mouse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Hero Area Start-->
+<div class="slider-area ">
+    <div class="single-slider slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>Mouse Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero Area End-->
+<br />
+<br />
+<br />
+<div class="col-md-4" style="margin-right:auto; margin-left:auto;">
+    <div class="single-new-pro mb-30 text-center">
+        <div class="product-img">
+            <a data-fancybox="mouse" href="~/theme/assets/img/gallery/@Html.DisplayFor(model => model.Image)" data-caption="@Html.DisplayFor(model => model.Marka) @Html.DisplayFor(model => model.Modeli)"><img src="~/theme/assets/img/gallery/@Html.DisplayFor(model => model.Image)"></a>
+        </div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Marka)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Marka)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeli)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeli)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ngjyra)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ngjyra)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RgbLight)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RgbLight)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)$
+            </dd>
+            <dd>
+                <div>
+                    <a class="button button-contactForm boxed-btn" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="button button-contactForm boxed-btn" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                    <a class="button button-contactForm boxed-btn" asp-action="Index">Back to List</a>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>

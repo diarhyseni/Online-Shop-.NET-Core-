@@ -1,0 +1,213 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<main>
+    <!--? slider Area Start -->
+    <!-- Single Slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="2500">
+                <img src="~/theme/assets/img/home/banner1.jpeg" class="d-block w-100" alt="...">
+
+            </div>
+            <div class="carousel-item" data-interval="2500">
+                <img src="~/theme/assets/img/home/banner2.jpeg" class="d-block w-100" alt="...">
+
+            </div>
+            <div class="carousel-item" data-interval="2500">
+                <img src="~/theme/assets/img/home/banner3.jpeg" class="d-block w-100" alt="...">
+
+            </div>
+            <div class="carousel-item" data-interval="2500">
+                <img src="~/theme/assets/img/home/banner4.jpeg" class="d-block w-100" alt="...">
+
+            </div>
+            <div class="carousel-item" data-interval="2500">
+                <img src="~/theme/assets/img/home/banner5.jpeg" class="d-block w-100" alt="...">
+
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- Single Slider -->
+    <!-- slider Area End-->
+    <!-- ? New Product Start -->
+    <br />
+    <!--? Watch Choice  Start-->
+    <div class="watch-area section-padding30">
+        <div class="container">
+            <div class="row align-items-center justify-content-between padding-130">
+                <div class="col-lg-5 col-md-6">
+                    <div class="watch-details mb-40">
+                        <h2>Laptops of Choice</h2>
+                        <p><b>GS66 Stealth</b> is a robust portable laptop packed with up to 10th Gen. Intel® Core™ i9 processor and the NVIDIA® GeForce RTX™ 3080 Laptop GPU 16GB GDDR6. </p>
+                        <a asp-controller="Laptops" asp-action="Index"  class="button button-contactForm boxed-btn">Show More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <div class="choice-watch-img mb-40">
+                        <img src="~/theme/assets/img/home/Choice1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <div class="choice-watch-img mb-40">
+                        <img src="~/theme/assets/img/home/Choice2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="watch-details mb-40">
+                        <h2>Mouse of Choice</h2>
+                        <p><b>CLUTCH GM20 ELITEA</b> with state of the art PixArt PAW 3309 optical sensor with up to 6400 DPI can keep up with your every move.</p>
+                        <a asp-controller="Mice" asp-action="Index" class="button button-contactForm boxed-btn">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Watch Choice  End-->
+    <!--? Gallery Area Start -->
+    <div class="gallery-area">
+        <div class="container-fluid p-0 fix">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                    <div class="single-gallery mb-30">
+                        <div class="gallery-img big-img " style="background-image: url(/theme/assets/img/home/gallery1.jpg);"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img img-fluid" style="background-image: url(/theme/assets/img/home/gallery2.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12  col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img" style="background-image: url(/theme/assets/img/home/gallery4.png);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Area End -->
+    <div class="container">
+        <!-- Section tittle -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-tittle mb-70">
+                    <h2>New Arrivals</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="single-new-pro mb-30 text-center">
+                    <div class="product-img">
+                        <img src="~/theme/assets/img/home/NewProduct1.jpg" class="img-fluid">
+                    </div>
+                    <div class="product-caption ">
+                        <h3><a href="product_details.html">Razer Nari HeadSet 7.1</a></h3>
+                        <span>159.99€</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="single-new-pro mb-30 text-center">
+                    <div class="product-img">
+                        <img src="~/theme/assets/img/home/NewProduct2.jpg" class="img-fluid">
+                    </div>
+                    <div class="product-caption">
+                        <h3><a href="product_details.html">Sony Playstation 5</a></h3>
+                        <span>499.90€</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="single-new-pro mb-30 text-center">
+                    <div class="product-img">
+                        <img src="~/theme/assets/img/home/NewProduct3.jpg" class="img-fluid">
+                    </div>
+                    <div class="product-caption">
+                        <h3><a href="product_details.html">iBUYPOWER Gaming PC </a></h3>
+                        <span>1,299.00€</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--? Video Area Start -->
+    <div class="video-area">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="video-wrap">
+                        <div class="play-btn "><a class="popup-video" href="https://www.youtube.com/watch?v=0rtSjaowO2I"><i class="fas fa-play"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Arrow -->
+            <div class="thumb-content-box">
+                <div class="thumb-content">
+                    <h3>Razer Blade 15</h3>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Area End -->
+    <!--  New Product End -->
+    <!--? Shop Method Start-->
+    <br />
+    <div class="shop-method-area">
+        <div class="container">
+            <div class="method-wrapper">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-method mb-40">
+                            <i class="ti-package"></i>
+                            <h6>Free Shipping Method</h6>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-method mb-40">
+                            <i class="ti-unlock"></i>
+                            <h6>Secure Payment System</h6>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-method mb-40">
+                            <i class="ti-reload"></i>
+                            <h6>24/7 Assistance</h6>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Method End-->
+</main>

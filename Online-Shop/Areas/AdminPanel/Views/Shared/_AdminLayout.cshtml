@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Online_Shop</title>
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="~/theme/assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/theme/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/theme/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/theme/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/theme/assets/css/slick.css">
+    <link rel="stylesheet" href="~/theme/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/theme/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+
+</head>
+<body>
+    <header>
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a asp-controller="Home" asp-action="Index"><img src="~/theme/assets/img/home/GamingX-logo.png" height="40" width="200" class="img-fluid"></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Home" asp-action="Index">Admin Panel</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">User Panel</a></li>
+                                    <li class="hot">
+                                        <a href="#">Products</a>
+                                        <ul class="submenu">
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Laptops" asp-action="Index">Laptops</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="GameConsoles" asp-action="Index">Consoles</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Mice" asp-action="Index">Mouse</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Joysticks" asp-action="Index">Joysticks</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Chairs" asp-action="Index">Chairs</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Headsets" asp-action="Index">Headsets</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Roles" asp-action="Index">Roles</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Contacts" asp-action="Create">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                            <ul>
+
+                                <partial name="_LoginPartial" />
+                                <!--
+                                <li> <span class="flaticon-user"></span></a></li>
+                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a asp-controller="Home" asp-action="Index"><img src="~/theme/assets/img/home/GamingX-logo.png" width="200" height="40" alt=""></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p> To offer an online, cost effective, quality , service orientated purchasing method.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li><a asp-controller="About" asp-action="Index">About</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>New Products</h4>
+                                <ul>
+                                    <li><a asp-controller="Laptops" asp-action="Index">Laptops</a></li>
+                                    <li><a asp-controller="Chairs" asp-action="Index">Gaming Chairs</a></li>
+                                    <li><a asp-controller="GameConsoles" asp-action="Index"> Game Consoles</a></li>
+                                    <li><a asp-controller="Headsets" asp-action="Index"> Headsets</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a asp-controller="Contacts" asp-action="Index">Contact Us</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--? Search model Begin -->
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Searching key.....">
+            </form>
+        </div>
+    </div>
+
+    <!-- Search model end -->
+    <!-- JS here -->
+
+    <script src="~/theme/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="~/theme/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/theme/assets/js/popper.min.js"></script>
+    <script src="~/theme/assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="~/theme/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="~/theme/assets/js/owl.carousel.min.js"></script>
+    <script src="~/theme/assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script src="~/theme/assets/js/wow.min.js"></script>
+    <script src="~/theme/assets/js/animated.headline.js"></script>
+    <script src="~/theme/assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="~/theme/assets/js/jquery.scrollUp.min.js"></script>
+    <script src="~/theme/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/theme/assets/js/jquery.sticky.js"></script>
+
+    <!-- contact js -->
+    <script src="~/theme/assets/js/contact.js"></script>
+    <script src="~/theme/assets/js/jquery.form.js"></script>
+    <script src="~/theme/assets/js/jquery.validate.min.js"></script>
+    <script src="~/theme/assets/js/mail-script.js"></script>
+    <script src="~/theme/assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="~/theme/assets/js/plugins.js"></script>
+    <script src="~/theme/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                columnDefs: [{
+                    targets: [0],
+                    orderData: [0, 1]
+                }, {
+                    targets: [1],
+                    orderData: [1, 0]
+                }, {
+                    targets: [4],
+                    orderData: [4, 0]
+                }]
+            });
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

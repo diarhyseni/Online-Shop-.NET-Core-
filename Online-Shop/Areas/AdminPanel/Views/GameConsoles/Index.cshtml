@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Online_Shop.Models.GameConsole>
+
+@{
+    ViewData["Title"] = "Consoles";
+
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+<!-- Hero Area Start-->
+<div class="slider-area ">
+    <div class="single-slider slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>Admin Panel - Consoles</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero Area End-->
+<br />
+<br />
+<br />
+<section class="new-product-area section-padding30">
+    <div class="container">
+        <!-- Section tittle -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-tittle mb-70">
+                    <h2>Latest Deals</h2>
+                </div>
+                <p>
+                    <a asp-action="Create">Create New</a>
+                </p>
+            </div>
+            <p>
+                @using (@Html.BeginForm())
+                {
+                    @Html.TextBox("search") <input class="button button-contactForm boxed-btn" type="submit" value="search" />
+                }
+
+            </p>
+        </div>
+        <div class="row pt-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-new-pro mb-30 text-center">
+                        <div class="product-img">
+                            <a data-fancybox="console" href="~/theme/assets/img/gallery/@Html.DisplayFor(modelItem => item.Image)" data-caption="@Html.DisplayFor(modelItem => item.Marka) @Html.DisplayFor(modelItem => item.Modeli)"><img src="~/theme/assets/img/gallery/@Html.DisplayFor(modelItem => item.Image)"></a>
+                        </div>
+                        <div class="product-caption">
+                            <h3><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Marka)</a></h3>
+                            <span>@Html.DisplayFor(modelItem => item.Price)$</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <partial name="_pager" model="@pager" />
+    </div>
+</section>
+<!--  New Product End -->

@@ -1,0 +1,50 @@
+﻿@model Online_Shop.Areas.AdminPanel.Controllers.DisplayViewModel;
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<!-- Hero Area Start-->
+<div class="slider-area ">
+    <div class="single-slider slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>Admin Panel - Roles</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero Area End-->
+<br />
+<br />
+<br />
+<div class="col-md-4" style="margin-right:auto; margin-left:auto">
+    <div class="single-new-pro mb-30 text-center">
+        <partial name="_CreateRole" model="new Online_Shop.Areas.AdminPanel.Controllers.RoleViewModel()">
+            <hr />
+            <br />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Roles
+                </dt>
+                <dd class="col-sm-10">
+                    <ul>
+                        @foreach (var role in Model.Roles)
+                        {
+                            <li>
+                                @role
+                            </li>
+                        }
+                    </ul>
+                </dd>
+            </dl>
+    </div>
+    <br />
+    <div>
+        <partial name="_AddUserToRole" model="new Online_Shop.Areas.AdminPanel.Controllers.UpdateUserRoleViewModel() { Users = Model.Users, Roles = Model.Roles }">
+    </div>
+</div>
