@@ -1,0 +1,66 @@
+﻿@using Online_Shop.Models
+@model List<Product>
+    @{
+        ViewData["Title"] = "Cart";
+    }
+
+    <!-- Hero Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Area End-->
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/theme/assets/img/gallery/@item.Image" width="200" height="150" />
+                        </td>
+                        <td>@item.Marka</td>
+                        <td>@item.Modeli</td>
+                        <td>@item.Ngjyra</td>
+                        <td>@item.CategoryId</td>
+                        <td>@item.Price $</td>
+                        <td>
+                            <a asp-area="" asp-action="Remove" asp-controller="Products" asp-route-id="@item.ProductId">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="col-6">
+                <a asp-action="Index" asp-controller="Products" class="button button-contactForm boxed-btn">Back to Home</a>
+            </div>
+            <div class="col-6 text-right">
+                <h3>Total Amount: @Model.Sum(c => c.Price)$</h3>
+                @if (@Model.Sum(c => c.Price) != 0)
+                {
+                <a asp-action="Checkout" asp-controller="Order" class="button button-contactForm boxed-btn">Proceed to Checkout</a>
+                }
+            </div>
+        </div>
+    </div>
+

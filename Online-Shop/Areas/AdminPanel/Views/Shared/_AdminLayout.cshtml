@@ -40,18 +40,11 @@
                                     <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Home" asp-action="Index">Admin Panel</a></li>
                                     <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">User Panel</a></li>
                                     <li class="hot">
-                                        <a href="#">Products</a>
-                                        <ul class="submenu">
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Laptops" asp-action="Index">Laptops</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="GameConsoles" asp-action="Index">Consoles</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Mice" asp-action="Index">Mouse</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Joysticks" asp-action="Index">Joysticks</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Chairs" asp-action="Index">Chairs</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Headsets" asp-action="Index">Headsets</a></li>
-                                        </ul>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
                                     </li>
                                     <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Roles" asp-action="Index">Roles</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Contacts" asp-action="Create">Contact Us</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Contacts" asp-action="Index">Contact Us</a></li>
+                                    <li> <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -89,7 +82,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a asp-controller="Home" asp-action="Index"><img src="~/theme/assets/img/home/GamingX-logo.png" width="200" height="40" alt=""></a>
+                                    <a asp-area="AdminPanel" asp-controller="Home" asp-action="Index"><img src="~/theme/assets/img/home/GamingX-logo.png" width="200" height="40" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
@@ -116,10 +109,10 @@
                             <div class="footer-tittle">
                                 <h4>New Products</h4>
                                 <ul>
-                                    <li><a asp-controller="Laptops" asp-action="Index">Laptops</a></li>
-                                    <li><a asp-controller="Chairs" asp-action="Index">Gaming Chairs</a></li>
-                                    <li><a asp-controller="GameConsoles" asp-action="Index"> Game Consoles</a></li>
-                                    <li><a asp-controller="Headsets" asp-action="Index"> Headsets</a></li>
+                                    <li><a asp-area="AdminPanel" asp-controller="Products" asp-action="Index">Laptops</a></li>
+                                    <li><a asp-area="AdminPanel" asp-controller="Products" asp-action="Index">Gaming Chairs</a></li>
+                                    <li><a asp-area="AdminPanel" asp-controller="Products" asp-action="Index"> Game Consoles</a></li>
+                                    <li><a asp-area="AdminPanel" asp-controller="Products" asp-action="Index"> Headsets</a></li>
                                 </ul>
                             </div>
                         </div>

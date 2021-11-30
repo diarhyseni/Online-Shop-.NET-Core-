@@ -1,6 +1,18 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@using System.Net.Http
+@using Online_Shop.Utilityy
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccesor 
+@{
+    int count = 0;
+    List<Product> products = HttpContextAccesor.HttpContext.Session.Get<List<Product>>("products");
+    if (products == null) {
+        products = new List<Product>();
+    }
+    count = products.Count();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +35,13 @@
     <link rel="stylesheet" href="~/theme/assets/css/slick.css">
     <link rel="stylesheet" href="~/theme/assets/css/nice-select.css">
     <link rel="stylesheet" href="~/theme/assets/css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
@@ -60,15 +76,18 @@
                                 <ul id="navigation">
                                     <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                                     <li class="hot">
-                                        <a href="#">Products</a>
-                                        <ul class="submenu">
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Laptops" asp-action="Index">Laptops</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="GameConsoles" asp-action="Index">Consoles</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Mice" asp-action="Index">Mouse</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Joysticks" asp-action="Index">Joysticks</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Chairs" asp-action="Index">Chairs</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Headsets" asp-action="Index">Headsets</a></li>
-                                        </ul>
+
+                                        <a asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                                        <!-- <ul class="submenu">
+
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="Laptops" asp-action="Index">Laptops</a></li>
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="GameConsoles" asp-action="Index">Consoles</a></li>
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="Mice" asp-action="Index">Mouse</a></li>
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="Joysticks" asp-action="Index">Joysticks</a></li>
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="Chairs" asp-action="Index">Chairs</a></li>
+               <li><a class="nav-link text-dark" asp-area="" asp-controller="Headsets" asp-action="Index">Headsets</a></li>
+           </ul>
+            -->
                                     </li>
                                     <li><a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">About Us</a></li>
                                     <li><a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Create">Contact Us</a></li>
@@ -76,6 +95,12 @@
                                     {
                                         <li><a class="nav-link text-dark" asp-area="AdminPanel" asp-controller="Home" asp-action="Index">Admin Panel</a></li>
                                     }
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Cart">
+                                            <i class="fas fa-shopping-cart"></i> 
+                                        (@count)
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -141,10 +166,10 @@
                             <div class="footer-tittle">
                                 <h4>New Products</h4>
                                 <ul>
-                                    <li><a asp-controller="Laptops" asp-action="Index">Laptops</a></li>
-                                    <li><a asp-controller="Chairs" asp-action="Index">Gaming Chairs</a></li>
-                                    <li><a asp-controller="GameConsoles" asp-action="Index"> Game Consoles</a></li>
-                                    <li><a asp-controller="Headsets" asp-action="Index"> Headsets</a></li>
+                                    <li><a asp-area="" asp-controller="Products" asp-action="Index">Laptops</a></li>
+                                    <li><a asp-area="" asp-controller="Products" asp-action="Index">Gaming Chairs</a></li>
+                                    <li><a asp-area="" asp-controller="Products" asp-action="Index"> Game Consoles</a></li>
+                                    <li><a asp-area="" asp-controller="Products" asp-action="Index"> Headsets</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -211,7 +236,7 @@
     <script src="~/theme/assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

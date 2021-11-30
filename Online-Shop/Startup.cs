@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Online_Shop
 {
@@ -37,7 +38,20 @@ namespace Online_Shop
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            
+        
+
+
+
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                //options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
 
             //Ketu lejohet thirrja e AddContextAccessor per Dependecy Injection
             services.AddHttpContextAccessor();
@@ -60,9 +74,10 @@ namespace Online_Shop
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            /*  app.UseSession();*/
             app.UseRouting();
-
+            app.UseCookiePolicy();
+            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
 

@@ -18,13 +18,12 @@ namespace Online_Shop.Data
         {
             this.httpContextAccessor = httpContextAccessor;
         }
-        public DbSet<Laptop> Laptops { get; set; }
-        public DbSet<Headset> Headsets { get; set; }
-        public DbSet<Mouse> Mice { get; set; }
-        public DbSet<Chair> Chairs { get; set; }
-        public DbSet<GameConsole> GameConsoles { get; set; }
-        public DbSet<Joystick> Joysticks { get; set; }
+        
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
 
         public async Task<int> SaveChangesAsync() 
         {
@@ -50,6 +49,8 @@ namespace Online_Shop.Data
                 }
             }
         }
+       
         public DbSet<Online_Shop.Models.Contact> Contact { get; set; }
+        public DbSet<Online_Shop.Models.Product> Product { get; set; }
     }
 }

@@ -1,0 +1,33 @@
+﻿@model Online_Shop.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <div>
+        <h4>Category</h4>
+        <hr />
+        <dl class="row" style="margin-right:auto; margin-left:auto;>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+        </dl>
+    </div>
+    <div style="margin-right:auto; margin-left:auto;>
+        <a asp-action="Edit" asp-route-id="@Model.CategoryId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>
